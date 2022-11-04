@@ -1,1 +1,18 @@
-"# Class-08-CRUD-Project-01" 
+# Professional Web Development - Creative IT 
+
+## CRUD Project 01
+
+## Feature's - 
+
+* REGISTARION
+* FORM VALIDATION
+* CREATE DATABASE
+* INSERT DATA
+* DELETE DATA
+* UPDATE DATA
+* VIEW DATA
+
+* SETUP A ADMIN DASHBOARD
+
+* CRAETE A MODERN FRONT-END SITE WITH NAVBAR 
+  
