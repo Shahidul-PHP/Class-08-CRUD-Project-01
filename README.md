@@ -1,10 +1,10 @@
 # Professional Web Development - Creative IT 
 
-## CRUD Project 01
+## CRUD Project 01  - Class 08
 
 ## Feature's - 
 
-* REGISTARION
+* REGISTRATION
 * FORM VALIDATION
 * CREATE DATABASE
 * INSERT DATA
