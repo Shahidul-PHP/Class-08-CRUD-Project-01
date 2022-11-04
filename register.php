@@ -24,6 +24,13 @@ session_start();
             top: -24px;
             left: 288px
         }
+
+        .show_error {
+            color: red;
+            margin-bottom: 16px;
+            text-align: left;
+            font-weight: 500;
+        }
     </style>
 </head>
 
@@ -38,30 +45,43 @@ session_start();
 
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input name="name" type="text" class="form-control" placeholder="Student Full Name">
+                    <input name="name" type="text" class="form-control" placeholder="Student Full Name" value="<?= isset($_SESSION['name_value_error']) ? $_SESSION['name_value_error'] : '' ?>">
                 </div>
-                
-                <?php if(isset($_SESSION['nameError'])){?>
-                    <p><?= $_SESSION['nameError']?></p>
-                <?php } unset($_SESSION['nameError']) ?>
+
+                <?php if (isset($_SESSION['nameError'])) { ?>
+                    <p class="show_error"><?= $_SESSION['nameError'] ?></p>
+                <?php }
+                unset($_SESSION['nameError']) ?>
 
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input name="department" type="text" class="form-control" placeholder="Department">
+                    <input name="department" type="text" class="form-control" placeholder="Department" value="<?= isset($_SESSION['department_value_error']) ? $_SESSION['department_value_error'] : '' ?>">
                 </div>
-                <div class="form-holder">
-                    <span class="lnr lnr-phone-handset"></span>
-                    <input name="phone" type="text" class="form-control" placeholder="Phone Number">
-                </div>
+
+                <?php if (isset($_SESSION['deptError'])) { ?>
+                    <p class=" show_error"><?= $_SESSION['deptError'] ?></p>
+                <?php }
+                unset($_SESSION['deptError']) ?>
+
                 <div class="form-holder">
                     <span class="lnr lnr-envelope"></span>
-                    <input name="email" type="text" class="form-control" placeholder="Mail">
+                    <input name="email" type="text" class="form-control" placeholder="Mail" value="<?= isset($_SESSION['mail_value_error']) ? $_SESSION['mail_value_error'] : '' ?>">
                 </div>
+
+                <?php if (isset($_SESSION['mailError'])) { ?>
+                    <p class=" show_error"><?= $_SESSION['mailError'] ?></p>
+                <?php }
+                unset($_SESSION['mailError']) ?>
+
                 <div class="form-holder">
                     <span class="lnr lnr-lock"></span>
                     <input name="password" type="password" class="form-control" placeholder="Password"><i class="fa-solid fa-eye"></i>
-
                 </div>
+                <?php if (isset($_SESSION['passError'])) { ?>
+                    <p class="show_error"><?= $_SESSION['passError'] ?></p>
+                <?php }
+                unset($_SESSION['passError']) ?>
+
                 <button type="submit">
                     <span>CREATE NEW ACCOUNT</span>
                 </button>
@@ -84,4 +104,7 @@ session_start();
 
 <?php
 // session code 
+unset($_SESSION['name_value_error']);
+unset($_SESSION['department_value_error']);
+unset($_SESSION['mail_value_error']);
 ?>
