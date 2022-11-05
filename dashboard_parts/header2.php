@@ -7,12 +7,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Admin Dashboard</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../dashboard_asset/images/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../dashboard_asset/vendor/chartist/css/chartist.min.css">
-    <link href="../dashboard_asset/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-    <link href="../dashboard_asset/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link href="../dashboard_asset/css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="dashboard_asset/images/favicon.png">
+    <link rel="stylesheet" href="dashboard_asset/vendor/chartist/css/chartist.min.css">
+    <link href="dashboard_asset/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="dashboard_asset/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="dashboard_asset/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         .icon a {
@@ -34,9 +33,6 @@
 
         .iconn:hover {
             color: red;
-        }
-        button{
-            font-size: 15px;
         }
     </style>
 
@@ -865,8 +861,8 @@
                             <span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="user_info/users.php">User List</a></li>
-                            <li><a href="./app-profile.html">Upadte User</a></li>
+                            <li><a href="../user_info/users.php">User List</a></li>
+                            <li><a href="../user_info/user_info_edit.php">Upadte User</a></li>
                         </ul>
                     </li>
                 </ul>

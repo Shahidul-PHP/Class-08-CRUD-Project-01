@@ -99,7 +99,7 @@ session_start();
     <?php if (isset($_SESSION['confirmation'])) { ?>
         <script>
             Swal.fire({
-                position: 'center',
+                position: 'top-end',
                 icon: 'success',
                 title: "<?= $_SESSION['confirmation'] ?>",
                 showConfirmButton: false,
