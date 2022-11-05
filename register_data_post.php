@@ -1,4 +1,5 @@
 <?php 
+require 'db.php';
 session_start();
 
 //name validation
@@ -54,6 +55,7 @@ if(empty($email)){
 // password validation
 
 $password = $_POST['password'];
+$after_hash = password_hash($password,PASSWORD_DEFAULT);
 
 $upper = preg_match('@[A-Z]@', $password);
 $lower = preg_match('@[a-z]@', $password);
@@ -76,8 +78,15 @@ if (empty($password)) {
 
 
 // if flag and all are true
+
 if($flag){
     //data insert into database
+
+    $insert_data  = "INSERT INTO students(name,department,email,password) VALUES('$name','$department','$email','$after_hash')";
+    mysqli_query($db_connection,$insert_data);
+
+    $_SESSION['confirmation'] = 'New Account Created Successfully !!';
+    header('location:register.php');
 }
 
 // if flag false
@@ -88,23 +97,6 @@ else{
     $_SESSION['mail_value_error'] = $email;
     header('location:register.php');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

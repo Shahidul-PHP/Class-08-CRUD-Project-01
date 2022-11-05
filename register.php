@@ -75,7 +75,7 @@ session_start();
 
                 <div class="form-holder">
                     <span class="lnr lnr-lock"></span>
-                    <input name="password" type="password" class="form-control" placeholder="Password"><i class="fa-solid fa-eye"></i>
+                    <input id="show" name="password" type="password" class="form-control" placeholder="Password"><i class="fa-solid fa-eye" onclick="showPass()"></i>
                 </div>
                 <?php if (isset($_SESSION['passError'])) { ?>
                     <p class="show_error"><?= $_SESSION['passError'] ?></p>
@@ -87,14 +87,38 @@ session_start();
                 </button>
             </form>
 
-
             <img src="dashboard_asset/colorlib-regform-26/images/image-2.png" alt="" class="image-2">
         </div>
-
     </div>
 
+
     <script src="dashboard_asset/colorlib-regform-26/js/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="dashboard_asset/colorlib-regform-26/js/main.js"></script>
+
+    <?php if (isset($_SESSION['confirmation'])) { ?>
+        <script>
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: "<?= $_SESSION['confirmation'] ?>",
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    <?php }
+    unset($_SESSION['confirmation']) ?>
+
+    <script>
+        function showPass() {
+            let pass = document.getElementById('show')
+            if (pass.type == 'password') {
+                pass.type = 'text';
+            } else {
+                pass.type = 'password';
+            }
+        }
+    </script>
 
 </body>
 
